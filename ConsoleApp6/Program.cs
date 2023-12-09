@@ -23,9 +23,10 @@ namespace ConsoleApp6
             {
                 connection.Open();
 
-
+                Console.WriteLine("Введите количество товара, по которому искать: ");
+                int n = int.Parse(Console.ReadLine());
                 Console.WriteLine("Список товаров на складе");
-                string query = "SELECT * FROM inventory WHERE quantity > 150";
+                string query = "SELECT * FROM inventory WHERE quantity > " + n.ToString();
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
