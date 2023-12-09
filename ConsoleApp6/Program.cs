@@ -23,7 +23,9 @@ namespace ConsoleApp6
             {
                 connection.Open();
 
-                string query = "SELECT * FROM inventory";
+
+                Console.WriteLine("Список товаров на складе");
+                string query = "SELECT * FROM inventory WHERE quantity > 150";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
